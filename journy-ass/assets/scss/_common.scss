@@ -1,0 +1,47 @@
+@import "variables";
+
+* {
+	box-sizing: border-box;
+
+	&::after, &::before {
+		box-sizing: border-box;
+	}
+
+}
+
+a {
+	text-decoration: none;
+}
+img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+body {
+	font-size: 16px;
+	line-height: 20px;
+	font-family: $font-family;
+	color: $white-color;
+}
+
+.fw {
+	&__bold {
+		font-weight: 700;
+	}
+
+	&__medium {
+		font-weight: 500;
+	}
+
+}
+
+.d-flex {
+	display: flex;
+	justify-content: space-between;
+}
+
+.font-upper {
+	text-transform: uppercase;
+	@extend .fw__bold;
+}

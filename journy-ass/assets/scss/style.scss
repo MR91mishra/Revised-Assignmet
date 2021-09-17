@@ -1,0 +1,372 @@
+@import "reset";
+@import "variables";
+@import "mixin";
+@import "common";
+
+.journy {
+	background: url('../../assets/images/BGLayer.png')no-repeat;
+	position: relative;
+	background-size: cover;
+	border-bottom: 5px solid $border-color;
+	padding-bottom: 120px;
+
+	@include breakpoint(tablet-max) {
+		background: url('../../assets/images/mobileBGLayer.jpg');
+	}
+
+	&__container {
+		max-width: 1180px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	&__logo {
+		@extend .d-flex;
+
+		@include breakpoint(tablet-max) {
+			flex-direction: column;
+		}
+
+		&__left {
+			margin-left: 70px;
+			margin-top: 60px;
+
+			@include breakpoint(tablet-max) {
+				margin-top: 40px;
+				margin-left: 0;
+			}
+
+			img {
+				max-width: 60%;
+
+				@include breakpoint(tablet-max) {
+					max-width: 70%;
+					margin: auto;
+				}
+
+			}
+
+		}
+
+		&__right {
+			margin-top: 40px;
+
+			@include breakpoint(tablet-max) {
+				display: none;
+			}
+
+			img {
+				position: absolute;
+				right: 0;
+			}
+
+		}
+
+	}
+
+	&__infinite {
+		@extend .d-flex;
+
+		@include breakpoint(tablet-max) {
+			flex-direction: column;
+		}
+
+		&__image {
+			margin-top: 40px;
+
+			img {
+				max-width: 70%;
+				margin: auto;
+			}
+
+		}
+
+		&__newsletter {
+			width: 50%;
+
+			@include breakpoint(tablet-max) {
+				margin-top: 50px !important;
+				width: 90%;
+				margin: auto;
+			}
+
+			img {
+				width: 100%;
+
+				&:nth-child(1), &:nth-child(3) {
+					height: 45px;
+				}
+
+				&:nth-child(2) {
+					height: 250px;
+				}
+
+			}
+
+			&__form-div {
+				margin-top: -300px;
+				margin-left: 60px;
+				height: 280px;
+				width: 80%;
+
+				@include breakpoint(mobile-max) {
+					margin-left: 35px;
+				}
+
+				h2 {
+					font-size: 1.3rem;
+					color: $blue-text;
+					@extend .font-upper;
+
+					@include breakpoint(tablet-max) {
+						font-size: 0.75rem;
+					}
+
+				}
+
+				p {
+					color: $white-color;
+					margin: 30px 0 35px 0;
+					font-size: 0.75rem;
+				}
+
+				.form-group {
+					margin-bottom: 30px;
+
+					input {
+						font-size: 0.85rem;
+						color: $black-color;
+						height: 45px;
+						padding-left: 10px;
+						width: 100%;
+					}
+
+				}
+
+				.btn-primary {
+					margin-top: 15px;
+					font-size: 1.2rem;
+					border: 0;
+					padding: 14px 45px;
+					background-color: #fec23e;
+					color: $black-color;
+					cursor: pointer;
+					@extend .fw__bold;
+					@extend .font-upper;
+
+					@include breakpoint(tablet-max) {
+						font-size: 0.75rem;
+						width: 100%;
+						margin-top: 0;
+					}
+
+				}
+
+			}
+
+		}
+
+	}
+
+	&__snake {
+		display: flex;
+		justify-content: end;
+		margin-top: 70px;
+		position: relative;
+
+		@include breakpoint(tablet-max) {
+			width: 90%;
+			margin: 35px auto;
+			margin-top: 50px;
+			display: block;
+		}
+
+		img {
+			@include breakpoint(tablet-max) {
+				width: 100%;
+			}
+
+			@include breakpoint(mobile-min) {
+				height: 260px;
+			}
+
+		}
+
+		&__content {
+			position: absolute;
+			top: 80px;
+			right: 50px;
+			width: 27%;
+
+			@include breakpoint(tablet-max) {
+				top: 140px;
+				right: 60px;
+				width: 48%;
+			}
+
+			@include breakpoint(mobile-max) {
+				top: 60px;
+				right: 40px;
+				width: 44%;
+			}
+
+			@include breakpoint(mobile-min) {
+				top: 30px;
+				right: 3px;
+				width: 55%;
+			}
+
+			h3 {
+				font-size: 1.3rem;
+				line-height: 30px;
+				color: $blue-text;
+				@extend .font-upper;
+
+				@include breakpoint(tablet-max) {
+					font-size: 0.75rem;
+				}
+
+				@include breakpoint(mobile-min) {
+					font-size: 0.5rem;
+					line-height: 20px;
+				}
+
+			}
+
+			p {
+				color: $white-color;
+				margin-top: 15px;
+
+				@include breakpoint(tablet-max) {
+					font-size: 16px;
+				}
+
+				span {
+					color: $blue-text;
+				}
+
+			}
+
+		}
+
+	}
+
+	&__right-banner {
+		width: 95%;
+		margin-left: auto;
+		display: none;
+
+		@include breakpoint(tablet-max) {
+			display: block;
+		}
+
+		img {
+			width: 100%;
+		}
+
+	}
+
+	&__x-box {
+		position: absolute;
+		left: 15%;
+		bottom: -50px;
+
+		@include breakpoint(tablet-max) {
+			width: 12%;
+		}
+
+		@include breakpoint(mobile-max) {
+			width: 16%;
+		}
+
+		@include breakpoint(mobile-min) {
+			width: 30%;
+		}
+
+	}
+
+	&__game {
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		bottom: -50px;
+
+		@include breakpoint(tablet-max) {
+			left: 70%;
+			width: 35%;
+		}
+
+	}
+
+}
+
+.footer {
+	background-color: $black-color;
+	padding: 65px 40px 300px 40px;
+	text-align: center;
+
+	@include breakpoint(tablet-max) {
+		padding: 100px 40px 300px 40px;
+	}
+
+	ul {
+		li {
+			position: relative;
+			margin-right: 20px;
+			display: inline-block;
+
+			a {
+				color: $blue-text;
+				@extend .font-upper;
+				font-size: 0.65rem;
+
+				@include breakpoint(tablet-max) {
+					font-size: 0.55rem;
+				}
+
+			}
+
+			&::after {
+				content: "";
+				position: absolute;
+				right: -12px;
+				top: 3px;
+				width: 2px;
+				height: 15px;
+				background-color: $blue-text;
+			}
+
+			&:last-child {
+				&::after {
+					width: 0;
+				}
+
+			}
+
+		}
+
+	}
+
+	p {
+		margin-top: 25px;
+		color: $footer-color;
+		font-size: 0.45rem;
+		text-align: center;
+
+		span {
+			color: $white-color;
+			@extend .fw__bold;
+		}
+
+	}
+
+	img {
+		margin: auto;
+		margin-top: 140px;
+	}
+
+	.copyright {
+		color: $white-color;
+	}
+
+}
